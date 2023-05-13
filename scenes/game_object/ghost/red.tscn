@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmxr40cf0vs3k"]
+
+[ext_resource type="Texture2D" uid="uid://dhfhwma48cnjx" path="res://assets/spritesheets/PACMAN_general_sprites.png" id="1_g7dr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xewrn"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nswvi"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbh6c"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i56a"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1drr"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sgee"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnrdc"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy0mf"]
+atlas = ExtResource("1_g7dr0")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62sut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xewrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nswvi")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbh6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i56a")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1drr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sgee")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnrdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy0mf")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev00t"]
+
+[node name="Red" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_62sut")
+animation = &"down"
+frame_progress = 0.398847
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ev00t")
