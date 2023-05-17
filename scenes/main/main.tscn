@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcvjcxqbr0juc"]
+[gd_scene load_steps=9 format=3 uid="uid://b4l03bre245g7"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_qkwr4"]
 [ext_resource type="TileSet" uid="uid://cumg5e2020i1" path="res://resources/map_tileset.tres" id="1_tpmgj"]
+[ext_resource type="PackedScene" uid="uid://d26bml1yiyr8b" path="res://scenes/ui/score_ui.tscn" id="3_ct3jv"]
 [ext_resource type="PackedScene" uid="uid://0hutsbs2jt8r" path="res://scenes/game_object/pac_man/pac_man.tscn" id="3_nwd3b"]
+[ext_resource type="PackedScene" uid="uid://crbrmkwu0dt65" path="res://scenes/game_object/consumable/bit.tscn" id="4_1b2ni"]
+[ext_resource type="PackedScene" uid="uid://dtpb507jesmud" path="res://scenes/game_object/consumable/power_ball.tscn" id="5_dbbl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cext"]
 size = Vector2(32, 48)
@@ -16,7 +19,11 @@ script = ExtResource("1_qkwr4")
 [node name="Map" type="TileMap" parent="."]
 tile_set = ExtResource("1_tpmgj")
 format = 2
-layer_0/tile_data = PackedInt32Array(196608, 1, 0, 262144, 851969, 2, 327680, 851969, 2, 393216, 851969, 2, 458752, 851969, 2, 524288, 851969, 2, 589824, 851969, 2, 1441792, 1, 0, 1507328, 851969, 2, 1572864, 851969, 2, 1638400, 851969, 2, 1703936, 851969, 2, 1769472, 851969, 0, 1835008, 851969, 1, 1900544, 851969, 2, 1966080, 851969, 2, 196610, 720897, 0, 393218, 1, 5, 458754, 262145, 4, 589826, 1, 4, 1441794, 720897, 0, 1572866, 1, 4, 1638402, 262145, 4, 1769474, 196609, 3, 1835010, 196609, 4, 1966082, 262145, 3, 196611, 720897, 0, 393219, 131073, 5, 458755, 131073, 4, 589827, 131073, 3, 1441795, 720897, 0, 1966083, 131073, 3, 196612, 720897, 0, 393220, 131073, 5, 458756, 131073, 4, 589828, 131073, 3, 1441796, 720897, 0, 1572868, 131073, 3, 1638404, 393217, 4, 1769476, 1, 5, 1835012, 1, 3, 1966084, 131073, 3, 196613, 720897, 0, 393221, 65537, 5, 458757, 196609, 4, 589829, 65537, 4, 655365, 196609, 4, 786437, 327681, 0, 851973, 851969, 2, 983045, 851969, 2, 1048581, 327681, 1, 1179653, 327681, 0, 1245189, 851969, 2, 1376261, 851969, 2, 1441797, 327681, 1, 1572869, 327681, 0, 1638405, 65537, 5, 1769477, 65537, 5, 1835013, 65537, 3, 1966085, 131073, 3, 1966086, 131073, 3, 196615, 720897, 0, 393223, 1, 5, 458759, 262145, 4, 589831, 1, 4, 655367, 1, 5, 720903, 1, 5, 786439, 1, 5, 1179655, 1, 4, 1245191, 1, 5, 1376263, 1, 5, 1441799, 1, 3, 1572871, 262145, 3, 1638407, 262145, 4, 1769479, 1, 4, 1835015, 1, 5, 1966087, 393217, 3, 196616, 720897, 0, 393224, 131073, 5, 458760, 131073, 4, 589832, 65537, 4, 655368, 65537, 5, 720904, 65537, 5, 786440, 458753, 3, 1179656, 65537, 4, 1245192, 65537, 5, 1376264, 65537, 5, 1441800, 65537, 3, 1572872, 131073, 3, 1638408, 131073, 4, 1769480, 65537, 4, 1835016, 65537, 5, 1966088, 458753, 3, 196617, 720897, 0, 1966089, 131073, 3, 196618, 720897, 0, 393226, 131073, 5, 458762, 131073, 4, 589834, 1, 4, 655370, 262145, 4, 786442, 131073, 3, 851978, 131073, 4, 983050, 131073, 0, 1048586, 917505, 2, 1179658, 917505, 2, 1245194, 131073, 1, 1376266, 1, 4, 1441802, 262145, 4, 1572874, 131073, 3, 1638410, 131073, 4, 1769482, 1, 4, 1835018, 262145, 4, 1966090, 131073, 3, 196619, 720897, 0, 393227, 65537, 5, 458763, 196609, 4, 589835, 131073, 3, 655371, 131073, 4, 786443, 196609, 3, 1245195, 720897, 0, 1376267, 131073, 3, 1441803, 131073, 4, 1572875, 196609, 3, 1638411, 196609, 4, 1769483, 131073, 3, 1835019, 131073, 4, 1966091, 196609, 3, 1245196, 720897, 0, 196621, 589825, 0, 262157, 1, 5, 327693, 1, 5, 393229, 1, 5, 458765, 1, 3, 589837, 131073, 3, 655373, 393217, 4, 786445, 1, 5, 1245197, 720897, 0, 1376269, 131073, 3, 1441805, 393217, 4, 1572877, 1, 5, 1638413, 1, 3, 1769485, 131073, 3, 1835021, 393217, 4, 1966093, 1, 5, 196622, 655361, 0, 262158, 65537, 5, 327694, 65537, 5, 393230, 65537, 5, 458766, 65537, 3, 589838, 131073, 3, 655374, 458753, 4, 786446, 65537, 5, 1245198, 720897, 0, 1376270, 131073, 3, 1441806, 458753, 4, 1572878, 65537, 5, 1638414, 65537, 3, 1769486, 131073, 3, 1835022, 458753, 4, 1966094, 65537, 5, 1245199, 720897, 0, 196624, 720897, 0, 393232, 1, 5, 458768, 262145, 4, 589840, 131073, 3, 655376, 131073, 4, 786448, 262145, 3, 1245200, 720897, 0, 1376272, 131073, 3, 1441808, 131073, 4, 1572880, 262145, 3, 1638416, 262145, 4, 1769488, 131073, 3, 1835024, 131073, 4, 1966096, 262145, 3, 196625, 720897, 0, 393233, 131073, 5, 458769, 131073, 4, 589841, 65537, 4, 655377, 196609, 4, 786449, 131073, 3, 851985, 131073, 4, 983057, 196609, 0, 1048593, 851969, 2, 1179665, 851969, 2, 1245201, 196609, 1, 1376273, 65537, 4, 1441809, 196609, 4, 1572881, 131073, 3, 1638417, 131073, 4, 1769489, 65537, 4, 1835025, 196609, 4, 1966097, 131073, 3, 196626, 720897, 0, 1966098, 131073, 3, 196627, 720897, 0, 393235, 131073, 5, 458771, 131073, 4, 589843, 1, 4, 655379, 1, 5, 720915, 1, 5, 786451, 393217, 3, 917523, 1, 5, 983059, 1, 5, 1245203, 1, 5, 1376275, 1, 5, 1441811, 1, 3, 1572883, 131073, 3, 1638419, 131073, 4, 1769491, 1, 4, 1835027, 1, 5, 1966099, 393217, 3, 196628, 720897, 0, 393236, 65537, 5, 458772, 196609, 4, 589844, 65537, 4, 655380, 65537, 5, 720916, 65537, 5, 786452, 65537, 5, 917524, 65537, 5, 983060, 65537, 5, 1245204, 65537, 5, 1376276, 65537, 5, 1441812, 65537, 3, 1572884, 196609, 3, 1638420, 196609, 4, 1769492, 65537, 4, 1835028, 65537, 5, 1966100, 458753, 3, 1966101, 131073, 3, 196630, 720897, 0, 393238, 1, 5, 458774, 262145, 4, 589846, 1, 4, 655382, 262145, 4, 786454, 262145, 0, 851990, 917505, 2, 983062, 917505, 2, 1048598, 262145, 1, 1179670, 262145, 0, 1245206, 917505, 2, 1376278, 917505, 2, 1441814, 262145, 1, 1572886, 262145, 0, 1638422, 1, 5, 1769494, 1, 5, 1835030, 1, 3, 1966102, 131073, 3, 196631, 720897, 0, 393239, 131073, 5, 458775, 131073, 4, 589847, 131073, 3, 1441815, 720897, 0, 1572887, 131073, 3, 1638423, 458753, 4, 1769495, 65537, 5, 1835031, 65537, 3, 1966103, 131073, 3, 196632, 720897, 0, 393240, 131073, 5, 458776, 131073, 4, 589848, 131073, 3, 1441816, 720897, 0, 1966104, 131073, 3, 196633, 720897, 0, 393241, 65537, 5, 458777, 196609, 4, 589849, 65537, 4, 1441817, 720897, 0, 1572889, 196609, 3, 1638425, 196609, 4, 1769497, 1, 4, 1835033, 262145, 4, 1966105, 196609, 3, 196635, 65537, 0, 262171, 917505, 2, 327707, 917505, 2, 393243, 917505, 2, 458779, 917505, 2, 524315, 917505, 2, 589851, 917505, 2, 1441819, 65537, 0, 1507355, 917505, 2, 1572891, 917505, 2, 1638427, 917505, 2, 1703963, 917505, 2, 1769499, 917505, 0, 1835035, 917505, 1, 1900571, 917505, 2, 1966107, 917505, 2, 655360, 851969, 2, 720896, 851969, 2, 786432, 1, 1, 1048576, 720897, 0, 1179648, 720897, 1, 2031616, 851969, 2, 2097152, 851969, 2, 2162688, 1, 1, 196609, 720897, 0, 786433, 720897, 1, 1048577, 720897, 0, 1179649, 720897, 1, 1441793, 720897, 0, 1769473, 131073, 3, 1835009, 131073, 4, 2162689, 720897, 1, 327682, 1, 4, 655362, 262145, 4, 786434, 720897, 1, 1048578, 720897, 0, 1179650, 720897, 1, 2031618, 262145, 4, 2162690, 720897, 1, 327683, 131073, 3, 655363, 131073, 4, 786435, 720897, 1, 1048579, 720897, 0, 1179651, 720897, 1, 1572867, 131073, 3, 1638403, 131073, 4, 2031619, 131073, 4, 2162691, 720897, 1, 327684, 131073, 3, 655364, 131073, 4, 786436, 720897, 1, 1048580, 720897, 0, 1179652, 720897, 1, 1703940, 1, 5, 2031620, 131073, 4, 2162692, 720897, 1, 327685, 65537, 4, 917509, 851969, 2, 1310725, 851969, 2, 1703941, 65537, 5, 2031621, 131073, 4, 2162693, 720897, 1, 196614, 720897, 0, 2031622, 131073, 4, 2162694, 720897, 1, 327687, 1, 4, 851975, 1, 5, 1310727, 1, 5, 1900551, 1, 5, 2031623, 131073, 4, 2162695, 720897, 1, 327688, 131073, 3, 851976, 458753, 4, 1310728, 65537, 5, 1900552, 65537, 5, 2031624, 131073, 4, 2162696, 720897, 1, 327689, 131073, 3, 393225, 131073, 5, 458761, 131073, 4, 786441, 131073, 3, 851977, 131073, 4, 1572873, 131073, 3, 1638409, 131073, 4, 2031625, 131073, 4, 2162697, 720897, 1, 327690, 131073, 3, 1114122, 917505, 2, 2031626, 131073, 4, 2162698, 720897, 1, 327691, 65537, 4, 851979, 196609, 4, 983051, 720897, 1, 2031627, 196609, 4, 2162699, 720897, 1, 196620, 720897, 0, 589836, 131073, 3, 655372, 131073, 4, 983052, 589825, 3, 1376268, 131073, 3, 1441804, 131073, 4, 1769484, 131073, 3, 1835020, 131073, 4, 2162700, 720897, 1, 720909, 1, 5, 851981, 1, 3, 983053, 655361, 3, 1507341, 1, 5, 1900557, 1, 5, 2031629, 1, 3, 2162701, 720897, 1, 720910, 65537, 5, 851982, 65537, 3, 983054, 655361, 3, 1507342, 65537, 5, 1900558, 65537, 5, 2031630, 65537, 3, 2162702, 720897, 1, 196623, 720897, 0, 589839, 131073, 3, 655375, 131073, 4, 983055, 720897, 3, 1376271, 131073, 3, 1441807, 131073, 4, 1769487, 131073, 3, 1835023, 131073, 4, 2162703, 720897, 1, 327696, 1, 4, 851984, 262145, 4, 983056, 720897, 1, 2031632, 262145, 4, 2162704, 720897, 1, 327697, 131073, 3, 1114129, 851969, 2, 2031633, 131073, 4, 2162705, 720897, 1, 327698, 131073, 3, 393234, 131073, 5, 458770, 131073, 4, 786450, 131073, 3, 851986, 131073, 4, 1572882, 131073, 3, 1638418, 131073, 4, 2031634, 131073, 4, 2162706, 720897, 1, 327699, 131073, 3, 851987, 393217, 4, 1310739, 1, 5, 1900563, 1, 5, 2031635, 131073, 4, 2162707, 720897, 1, 327700, 65537, 4, 851988, 65537, 5, 1310740, 65537, 5, 1900564, 65537, 5, 2031636, 131073, 4, 2162708, 720897, 1, 196629, 720897, 0, 2031637, 131073, 4, 2162709, 720897, 1, 327702, 1, 4, 917526, 917505, 2, 1310742, 917505, 2, 1703958, 1, 5, 2031638, 131073, 4, 2162710, 720897, 1, 327703, 131073, 3, 655383, 131073, 4, 786455, 720897, 1, 1048599, 720897, 0, 1179671, 720897, 1, 1703959, 65537, 5, 2031639, 131073, 4, 2162711, 720897, 1, 327704, 131073, 3, 655384, 131073, 4, 786456, 720897, 1, 1048600, 720897, 0, 1179672, 720897, 1, 1572888, 131073, 3, 1638424, 131073, 4, 2031640, 131073, 4, 2162712, 720897, 1, 327705, 65537, 4, 655385, 196609, 4, 786457, 720897, 1, 1048601, 720897, 0, 1179673, 720897, 1, 2031641, 196609, 4, 2162713, 720897, 1, 196634, 720897, 0, 786458, 720897, 1, 1048602, 720897, 0, 1179674, 720897, 1, 1441818, 720897, 0, 1769498, 131073, 3, 1835034, 131073, 4, 2162714, 720897, 1, 655387, 917505, 2, 720923, 917505, 2, 786459, 65537, 1, 1048603, 720897, 0, 1179675, 720897, 1, 2031643, 917505, 2, 2097179, 917505, 2, 2162715, 65537, 1, 917511, 1, 5, 983047, 1, 5, 917512, 65537, 5, 983048, 65537, 5, 1048583, 1, 3, 1048584, 65537, 3, 1048595, 1, 3, 1048596, 65537, 3, 1179667, 1, 4, 1179668, 65537, 4)
+layer_0/tile_data = PackedInt32Array(196608, 1, 0, 262144, 851969, 2, 327680, 851969, 2, 393216, 851969, 2, 458752, 851969, 2, 524288, 851969, 2, 589824, 851969, 2, 1441792, 1, 0, 1507328, 851969, 2, 1572864, 851969, 2, 1638400, 851969, 2, 1703936, 851969, 2, 1769472, 851969, 0, 1835008, 851969, 1, 1900544, 851969, 2, 1966080, 851969, 2, 196610, 720897, 0, 393218, 1, 5, 458754, 262145, 4, 589826, 1, 4, 1441794, 720897, 0, 1572866, 1, 4, 1638402, 262145, 4, 1769474, 196609, 3, 1835010, 196609, 4, 1966082, 262145, 3, 196611, 720897, 0, 393219, 131073, 5, 458755, 131073, 4, 589827, 131073, 3, 1441795, 720897, 0, 1966083, 131073, 3, 196612, 720897, 0, 393220, 131073, 5, 458756, 131073, 4, 589828, 131073, 3, 1441796, 720897, 0, 1572868, 131073, 3, 1638404, 393217, 4, 1769476, 1, 5, 1835012, 1, 3, 1966084, 131073, 3, 196613, 720897, 0, 393221, 65537, 5, 458757, 196609, 4, 589829, 65537, 4, 655365, 196609, 4, 786437, 327681, 0, 851973, 851969, 2, 983045, 851969, 2, 1048581, 327681, 1, 1179653, 327681, 0, 1245189, 851969, 2, 1376261, 851969, 2, 1441797, 327681, 1, 1572869, 327681, 0, 1638405, 65537, 5, 1769477, 65537, 5, 1835013, 65537, 3, 1966085, 131073, 3, 1966086, 131073, 3, 196615, 720897, 0, 393223, 1, 5, 458759, 262145, 4, 589831, 1, 4, 655367, 1, 5, 720903, 1, 5, 786439, 1, 5, 1179655, 1, 4, 1245191, 1, 5, 1376263, 1, 5, 1441799, 1, 3, 1572871, 262145, 3, 1638407, 262145, 4, 1769479, 1, 4, 1835015, 1, 5, 1966087, 393217, 3, 196616, 720897, 0, 393224, 131073, 5, 458760, 131073, 4, 589832, 65537, 4, 655368, 65537, 5, 720904, 65537, 5, 786440, 458753, 3, 1179656, 65537, 4, 1245192, 65537, 5, 1376264, 65537, 5, 1441800, 65537, 3, 1572872, 131073, 3, 1638408, 131073, 4, 1769480, 65537, 4, 1835016, 65537, 5, 1966088, 458753, 3, 196617, 720897, 0, 1966089, 131073, 3, 196618, 720897, 0, 393226, 131073, 5, 458762, 131073, 4, 589834, 1, 4, 655370, 262145, 4, 786442, 131073, 3, 851978, 131073, 4, 983050, 131073, 0, 1048586, 917505, 2, 1179658, 917505, 2, 1245194, 131073, 1, 1376266, 1, 4, 1441802, 262145, 4, 1572874, 131073, 3, 1638410, 131073, 4, 1769482, 1, 4, 1835018, 262145, 4, 1966090, 131073, 3, 196619, 720897, 0, 393227, 65537, 5, 458763, 196609, 4, 589835, 131073, 3, 655371, 131073, 4, 786443, 196609, 3, 1245195, 720897, 0, 1376267, 131073, 3, 1441803, 131073, 4, 1572875, 196609, 3, 1638411, 196609, 4, 1769483, 131073, 3, 1835019, 131073, 4, 1966091, 196609, 3, 1245196, 720897, 0, 196621, 589825, 0, 262157, 1, 5, 327693, 1, 5, 393229, 1, 5, 458765, 1, 3, 589837, 131073, 3, 655373, 393217, 4, 786445, 1, 5, 1245197, 720897, 0, 1376269, 131073, 3, 1441805, 393217, 4, 1572877, 1, 5, 1638413, 1, 3, 1769485, 131073, 3, 1835021, 393217, 4, 1966093, 1, 5, 196622, 655361, 0, 262158, 65537, 5, 327694, 65537, 5, 393230, 65537, 5, 458766, 65537, 3, 589838, 131073, 3, 655374, 458753, 4, 786446, 65537, 5, 1245198, 720897, 0, 1376270, 131073, 3, 1441806, 458753, 4, 1572878, 65537, 5, 1638414, 65537, 3, 1769486, 131073, 3, 1835022, 458753, 4, 1966094, 65537, 5, 1245199, 720897, 0, 196624, 720897, 0, 393232, 1, 5, 458768, 262145, 4, 589840, 131073, 3, 655376, 131073, 4, 786448, 262145, 3, 1245200, 720897, 0, 1376272, 131073, 3, 1441808, 131073, 4, 1572880, 262145, 3, 1638416, 262145, 4, 1769488, 131073, 3, 1835024, 131073, 4, 1966096, 262145, 3, 196625, 720897, 0, 393233, 131073, 5, 458769, 131073, 4, 589841, 65537, 4, 655377, 196609, 4, 786449, 131073, 3, 851985, 131073, 4, 983057, 196609, 0, 1048593, 851969, 2, 1179665, 851969, 2, 1245201, 196609, 1, 1376273, 65537, 4, 1441809, 196609, 4, 1572881, 131073, 3, 1638417, 131073, 4, 1769489, 65537, 4, 1835025, 196609, 4, 1966097, 131073, 3, 196626, 720897, 0, 1966098, 131073, 3, 196627, 720897, 0, 393235, 131073, 5, 458771, 131073, 4, 589843, 1, 4, 655379, 1, 5, 720915, 1, 5, 786451, 393217, 3, 917523, 1, 5, 983059, 1, 5, 1245203, 1, 5, 1376275, 1, 5, 1441811, 1, 3, 1572883, 131073, 3, 1638419, 131073, 4, 1769491, 1, 4, 1835027, 1, 5, 1966099, 393217, 3, 196628, 720897, 0, 393236, 65537, 5, 458772, 196609, 4, 589844, 65537, 4, 655380, 65537, 5, 720916, 65537, 5, 786452, 65537, 5, 917524, 65537, 5, 983060, 65537, 5, 1245204, 65537, 5, 1376276, 65537, 5, 1441812, 65537, 3, 1572884, 196609, 3, 1638420, 196609, 4, 1769492, 65537, 4, 1835028, 65537, 5, 1966100, 458753, 3, 1966101, 131073, 3, 196630, 720897, 0, 393238, 1, 5, 458774, 262145, 4, 589846, 1, 4, 655382, 262145, 4, 786454, 262145, 0, 851990, 917505, 2, 983062, 917505, 2, 1048598, 262145, 1, 1179670, 262145, 0, 1245206, 917505, 2, 1376278, 917505, 2, 1441814, 262145, 1, 1572886, 262145, 0, 1638422, 1, 5, 1769494, 1, 5, 1835030, 1, 3, 1966102, 131073, 3, 196631, 720897, 0, 393239, 131073, 5, 458775, 131073, 4, 589847, 131073, 3, 1441815, 720897, 0, 1572887, 131073, 3, 1638423, 458753, 4, 1769495, 65537, 5, 1835031, 65537, 3, 1966103, 131073, 3, 196632, 720897, 0, 393240, 131073, 5, 458776, 131073, 4, 589848, 131073, 3, 1441816, 720897, 0, 1966104, 131073, 3, 196633, 720897, 0, 393241, 65537, 5, 458777, 196609, 4, 589849, 65537, 4, 1441817, 720897, 0, 1572889, 196609, 3, 1638425, 196609, 4, 1769497, 1, 4, 1835033, 262145, 4, 1966105, 196609, 3, 196635, 65537, 0, 262171, 917505, 2, 327707, 917505, 2, 393243, 917505, 2, 458779, 917505, 2, 524315, 917505, 2, 589851, 917505, 2, 1441819, 65537, 0, 1507355, 917505, 2, 1572891, 917505, 2, 1638427, 917505, 2, 1703963, 917505, 2, 1769499, 917505, 0, 1835035, 917505, 1, 1900571, 917505, 2, 1966107, 917505, 2, 655360, 851969, 2, 720896, 851969, 2, 786432, 1, 1, 1048576, 720897, 0, 1179648, 720897, 1, 2031616, 851969, 2, 2097152, 851969, 2, 2162688, 1, 1, 196609, 720897, 0, 786433, 720897, 1, 1048577, 720897, 0, 1179649, 720897, 1, 1441793, 720897, 0, 1769473, 131073, 3, 1835009, 131073, 4, 2162689, 720897, 1, 327682, 1, 4, 655362, 262145, 4, 786434, 720897, 1, 1048578, 720897, 0, 1179650, 720897, 1, 2031618, 262145, 4, 2162690, 720897, 1, 327683, 131073, 3, 655363, 131073, 4, 786435, 720897, 1, 1048579, 720897, 0, 1179651, 720897, 1, 1572867, 131073, 3, 1638403, 131073, 4, 2031619, 131073, 4, 2162691, 720897, 1, 327684, 131073, 3, 655364, 131073, 4, 786436, 720897, 1, 1048580, 720897, 0, 1179652, 720897, 1, 1703940, 1, 5, 2031620, 131073, 4, 2162692, 720897, 1, 327685, 65537, 4, 917509, 851969, 2, 1310725, 851969, 2, 1703941, 65537, 5, 2031621, 131073, 4, 2162693, 720897, 1, 196614, 720897, 0, 2031622, 131073, 4, 2162694, 720897, 1, 327687, 1, 4, 851975, 1, 5, 1310727, 1, 5, 1900551, 1, 5, 2031623, 131073, 4, 2162695, 720897, 1, 327688, 131073, 3, 851976, 458753, 4, 1310728, 65537, 5, 1900552, 65537, 5, 2031624, 131073, 4, 2162696, 720897, 1, 327689, 131073, 3, 393225, 131073, 5, 458761, 131073, 4, 786441, 131073, 3, 851977, 131073, 4, 1572873, 131073, 3, 1638409, 131073, 4, 2031625, 131073, 4, 2162697, 720897, 1, 327690, 131073, 3, 1114122, 917505, 2, 2031626, 131073, 4, 2162698, 720897, 1, 327691, 65537, 4, 851979, 196609, 4, 983051, 720897, 1, 2031627, 196609, 4, 2162699, 720897, 1, 196620, 720897, 0, 589836, 131073, 3, 655372, 131073, 4, 983052, 589825, 3, 1376268, 131073, 3, 1441804, 131073, 4, 1769484, 131073, 3, 1835020, 131073, 4, 2162700, 720897, 1, 720909, 1, 5, 851981, 1, 3, 983053, 655361, 3, 1507341, 1, 5, 1900557, 1, 5, 2031629, 1, 3, 2162701, 720897, 1, 720910, 65537, 5, 851982, 65537, 3, 983054, 655361, 3, 1507342, 65537, 5, 1900558, 65537, 5, 2031630, 65537, 3, 2162702, 720897, 1, 196623, 720897, 0, 589839, 131073, 3, 655375, 131073, 4, 983055, 720897, 3, 1376271, 131073, 3, 1441807, 131073, 4, 1769487, 131073, 3, 1835023, 131073, 4, 2162703, 720897, 1, 327696, 1, 4, 851984, 262145, 4, 983056, 720897, 1, 2031632, 262145, 4, 2162704, 720897, 1, 327697, 131073, 3, 1114129, 851969, 2, 2031633, 131073, 4, 2162705, 720897, 1, 327698, 131073, 3, 393234, 131073, 5, 458770, 131073, 4, 786450, 131073, 3, 851986, 131073, 4, 1572882, 131073, 3, 1638418, 131073, 4, 2031634, 131073, 4, 2162706, 720897, 1, 327699, 131073, 3, 851987, 393217, 4, 1310739, 1, 5, 1900563, 1, 5, 2031635, 131073, 4, 2162707, 720897, 1, 327700, 65537, 4, 851988, 65537, 5, 1310740, 65537, 5, 1900564, 65537, 5, 2031636, 131073, 4, 2162708, 720897, 1, 196629, 720897, 0, 2031637, 131073, 4, 2162709, 720897, 1, 327702, 1, 4, 917526, 917505, 2, 1310742, 917505, 2, 1703958, 1, 5, 2031638, 131073, 4, 2162710, 720897, 1, 327703, 131073, 3, 655383, 131073, 4, 786455, 720897, 1, 1048599, 720897, 0, 1179671, 720897, 1, 1703959, 65537, 5, 2031639, 131073, 4, 2162711, 720897, 1, 327704, 131073, 3, 655384, 131073, 4, 786456, 720897, 1, 1048600, 720897, 0, 1179672, 720897, 1, 1572888, 131073, 3, 1638424, 131073, 4, 2031640, 131073, 4, 2162712, 720897, 1, 327705, 65537, 4, 655385, 196609, 4, 786457, 720897, 1, 1048601, 720897, 0, 1179673, 720897, 1, 2031641, 196609, 4, 2162713, 720897, 1, 196634, 720897, 0, 786458, 720897, 1, 1048602, 720897, 0, 1179674, 720897, 1, 1441818, 720897, 0, 1769498, 131073, 3, 1835034, 131073, 4, 2162714, 720897, 1, 655387, 917505, 2, 720923, 917505, 2, 786459, 65537, 1, 1048603, 720897, 0, 1179675, 720897, 1, 2031643, 917505, 2, 2097179, 917505, 2, 2162715, 65537, 1, 917511, 1, 5, 983047, 1, 5, 917512, 65537, 5, 983048, 65537, 5, 1048583, 1, 3, 1048584, 65537, 3, 1048595, 1, 3, 1048596, 65537, 3, 1179667, 1, 4, 1179668, 65537, 4, 262145, 589825, 4, 262146, 589825, 4, 262147, 589825, 4, 262148, 589825, 4, 262149, 589825, 4, 262150, 589825, 4, 262151, 589825, 4, 262152, 589825, 4, 262153, 589825, 4, 262154, 589825, 4, 262155, 589825, 4, 262156, 589825, 4, 262159, 589825, 4, 262160, 589825, 4, 262161, 589825, 4, 262162, 589825, 4, 262163, 589825, 4, 262164, 589825, 4, 262165, 589825, 4, 262166, 589825, 4, 262167, 589825, 4, 262168, 589825, 4, 262169, 589825, 4, 262170, 589825, 4, 327681, 589825, 4, 393217, 589825, 4, 458753, 589825, 4, 524289, 589825, 4, 524290, 589825, 4, 524291, 589825, 4, 524292, 589825, 4, 524293, 589825, 4, 524294, 589825, 4, 458758, 589825, 4, 393222, 589825, 4, 327686, 589825, 4, 524295, 589825, 4, 524296, 589825, 4, 524297, 589825, 4, 524298, 589825, 4, 524299, 589825, 4, 524300, 589825, 4, 524301, 589825, 4, 524302, 589825, 4, 524303, 589825, 4, 458767, 589825, 4, 393231, 589825, 4, 327695, 589825, 4, 524304, 589825, 4, 524305, 589825, 4, 524306, 589825, 4, 524307, 589825, 4, 524308, 589825, 4, 524309, 589825, 4, 458773, 589825, 4, 393237, 589825, 4, 327701, 589825, 4, 524310, 589825, 4, 524311, 589825, 4, 524312, 589825, 4, 524313, 589825, 4, 524314, 589825, 4, 458778, 589825, 4, 393242, 589825, 4, 327706, 589825, 4)
+
+[node name="ScoreUI" parent="." instance=ExtResource("3_ct3jv")]
+
+[node name="LivesUI" type="CanvasLayer" parent="."]
 
 [node name="EntranceLeft" type="Area2D" parent="."]
 position = Vector2(-48, 280)
@@ -39,5 +46,910 @@ position = Vector2(464, 280)
 [node name="PacManSpawn" type="Marker2D" parent="."]
 position = Vector2(224, 328)
 
+[node name="Consumables" type="Node2D" parent="."]
+
+[node name="Bit" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 72)
+
+[node name="Bit2" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 72)
+
+[node name="Bit3" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 72)
+
+[node name="Bit4" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 72)
+
+[node name="Bit5" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 72)
+
+[node name="Bit6" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 72)
+
+[node name="Bit7" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(120, 72)
+
+[node name="Bit8" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(136, 72)
+
+[node name="Bit9" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 72)
+
+[node name="Bit10" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 72)
+
+[node name="Bit11" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 72)
+
+[node name="Bit12" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 72)
+
+[node name="Bit13" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 72)
+
+[node name="Bit14" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 72)
+
+[node name="Bit15" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 72)
+
+[node name="Bit16" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 72)
+
+[node name="Bit17" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(312, 72)
+
+[node name="Bit18" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(328, 72)
+
+[node name="Bit19" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 72)
+
+[node name="Bit20" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 72)
+
+[node name="Bit21" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 72)
+
+[node name="Bit22" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 72)
+
+[node name="Bit23" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 72)
+
+[node name="Bit24" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 72)
+
+[node name="Bit25" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 88)
+
+[node name="Bit26" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 88)
+
+[node name="Bit27" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 88)
+
+[node name="Bit28" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 88)
+
+[node name="Bit29" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 88)
+
+[node name="Bit30" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 88)
+
+[node name="Bit31" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 120)
+
+[node name="Bit32" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 104)
+
+[node name="Bit33" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 104)
+
+[node name="Bit34" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 104)
+
+[node name="Bit35" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 104)
+
+[node name="Bit37" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 136)
+
+[node name="Bit38" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 120)
+
+[node name="Bit39" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 120)
+
+[node name="Bit40" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 120)
+
+[node name="Bit41" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 120)
+
+[node name="Bit42" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 120)
+
+[node name="Bit43" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 136)
+
+[node name="Bit44" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 136)
+
+[node name="Bit45" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 136)
+
+[node name="Bit46" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 136)
+
+[node name="Bit47" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 136)
+
+[node name="Bit48" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(120, 136)
+
+[node name="Bit49" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(136, 136)
+
+[node name="Bit50" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 136)
+
+[node name="Bit51" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 136)
+
+[node name="Bit52" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 136)
+
+[node name="Bit53" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 136)
+
+[node name="Bit54" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(216, 136)
+
+[node name="Bit55" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(232, 136)
+
+[node name="Bit56" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 136)
+
+[node name="Bit57" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 136)
+
+[node name="Bit58" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 136)
+
+[node name="Bit59" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 136)
+
+[node name="Bit60" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(312, 136)
+
+[node name="Bit61" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(328, 136)
+
+[node name="Bit62" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 136)
+
+[node name="Bit63" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 136)
+
+[node name="Bit64" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 136)
+
+[node name="Bit65" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 136)
+
+[node name="Bit66" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 136)
+
+[node name="Bit67" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 136)
+
+[node name="Bit68" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 152)
+
+[node name="Bit69" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 152)
+
+[node name="Bit70" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 152)
+
+[node name="Bit71" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 152)
+
+[node name="Bit72" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 152)
+
+[node name="Bit73" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 152)
+
+[node name="Bit74" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 168)
+
+[node name="Bit81" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 184)
+
+[node name="Bit82" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 184)
+
+[node name="Bit83" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 184)
+
+[node name="Bit84" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 184)
+
+[node name="Bit85" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 184)
+
+[node name="Bit86" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 184)
+
+[node name="Bit87" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 184)
+
+[node name="Bit88" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 184)
+
+[node name="Bit89" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 184)
+
+[node name="Bit90" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 184)
+
+[node name="Bit91" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 184)
+
+[node name="Bit92" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 184)
+
+[node name="Bit93" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 184)
+
+[node name="Bit94" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 184)
+
+[node name="Bit95" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 184)
+
+[node name="Bit96" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 184)
+
+[node name="Bit97" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 184)
+
+[node name="Bit98" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 184)
+
+[node name="Bit99" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 184)
+
+[node name="Bit100" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 184)
+
+[node name="Bit75" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 168)
+
+[node name="Bit76" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 168)
+
+[node name="Bit77" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 168)
+
+[node name="Bit78" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 168)
+
+[node name="Bit79" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 168)
+
+[node name="Bit80" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 200)
+
+[node name="Bit101" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 200)
+
+[node name="Bit102" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 200)
+
+[node name="Bit103" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 200)
+
+[node name="Bit104" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 216)
+
+[node name="Bit105" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 216)
+
+[node name="Bit106" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 216)
+
+[node name="Bit107" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 216)
+
+[node name="Bit108" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 232)
+
+[node name="Bit109" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 232)
+
+[node name="Bit110" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 232)
+
+[node name="Bit111" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 232)
+
+[node name="Bit112" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 232)
+
+[node name="Bit113" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(216, 232)
+
+[node name="Bit114" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(232, 232)
+
+[node name="Bit115" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 232)
+
+[node name="Bit116" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 232)
+
+[node name="Bit117" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 232)
+
+[node name="Bit118" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 232)
+
+[node name="Bit119" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 232)
+
+[node name="Bit120" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 248)
+
+[node name="Bit121" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 248)
+
+[node name="Bit122" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 248)
+
+[node name="Bit123" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 248)
+
+[node name="Bit124" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 264)
+
+[node name="Bit125" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 264)
+
+[node name="Bit126" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 264)
+
+[node name="Bit127" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 264)
+
+[node name="Bit128" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 280)
+
+[node name="Bit129" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 280)
+
+[node name="Bit130" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 280)
+
+[node name="Bit131" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 280)
+
+[node name="Bit132" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 280)
+
+[node name="Bit133" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 280)
+
+[node name="Bit134" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(8, 280)
+
+[node name="Bit135" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(120, 280)
+
+[node name="Bit136" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(136, 280)
+
+[node name="Bit137" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 280)
+
+[node name="Bit138" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 280)
+
+[node name="Bit139" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(312, 280)
+
+[node name="Bit140" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(328, 280)
+
+[node name="Bit141" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 280)
+
+[node name="Bit142" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 280)
+
+[node name="Bit143" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 280)
+
+[node name="Bit144" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 280)
+
+[node name="Bit145" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 280)
+
+[node name="Bit146" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 280)
+
+[node name="Bit147" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(440, 280)
+
+[node name="Bit148" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 296)
+
+[node name="Bit149" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 296)
+
+[node name="Bit150" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 296)
+
+[node name="Bit151" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 296)
+
+[node name="Bit152" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 312)
+
+[node name="Bit153" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 312)
+
+[node name="Bit154" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 312)
+
+[node name="Bit155" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 312)
+
+[node name="Bit156" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 328)
+
+[node name="Bit157" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 328)
+
+[node name="Bit158" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 328)
+
+[node name="Bit159" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 328)
+
+[node name="Bit160" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 328)
+
+[node name="Bit162" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(232, 328)
+
+[node name="Bit163" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 328)
+
+[node name="Bit164" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 328)
+
+[node name="Bit165" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 328)
+
+[node name="Bit166" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 328)
+
+[node name="Bit167" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 328)
+
+[node name="Bit168" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 344)
+
+[node name="Bit169" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 344)
+
+[node name="Bit170" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 344)
+
+[node name="Bit171" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 344)
+
+[node name="Bit172" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 360)
+
+[node name="Bit173" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 360)
+
+[node name="Bit174" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 360)
+
+[node name="Bit175" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 360)
+
+[node name="Bit176" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 376)
+
+[node name="Bit177" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 376)
+
+[node name="Bit178" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 376)
+
+[node name="Bit179" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 376)
+
+[node name="Bit180" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 376)
+
+[node name="Bit181" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 376)
+
+[node name="Bit182" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(120, 376)
+
+[node name="Bit183" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(136, 376)
+
+[node name="Bit184" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 376)
+
+[node name="Bit185" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 376)
+
+[node name="Bit186" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 376)
+
+[node name="Bit187" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 376)
+
+[node name="Bit188" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 376)
+
+[node name="Bit189" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 376)
+
+[node name="Bit190" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 376)
+
+[node name="Bit191" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 376)
+
+[node name="Bit192" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(312, 376)
+
+[node name="Bit193" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(328, 376)
+
+[node name="Bit194" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 376)
+
+[node name="Bit195" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 376)
+
+[node name="Bit196" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 376)
+
+[node name="Bit197" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 376)
+
+[node name="Bit198" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 376)
+
+[node name="Bit199" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 376)
+
+[node name="Bit200" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 392)
+
+[node name="Bit201" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 392)
+
+[node name="Bit202" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 392)
+
+[node name="Bit203" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 392)
+
+[node name="Bit204" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 392)
+
+[node name="Bit205" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 392)
+
+[node name="Bit206" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 408)
+
+[node name="Bit207" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 408)
+
+[node name="Bit208" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 408)
+
+[node name="Bit209" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 408)
+
+[node name="Bit210" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 408)
+
+[node name="Bit211" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 408)
+
+[node name="Bit213" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 424)
+
+[node name="Bit214" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 424)
+
+[node name="Bit215" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 424)
+
+[node name="Bit216" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(120, 424)
+
+[node name="Bit217" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(136, 424)
+
+[node name="Bit218" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 424)
+
+[node name="Bit219" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 424)
+
+[node name="Bit220" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 424)
+
+[node name="Bit221" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 424)
+
+[node name="Bit222" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(216, 424)
+
+[node name="Bit223" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(232, 424)
+
+[node name="Bit224" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 424)
+
+[node name="Bit225" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 424)
+
+[node name="Bit226" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 424)
+
+[node name="Bit227" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 424)
+
+[node name="Bit228" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(312, 424)
+
+[node name="Bit229" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(328, 424)
+
+[node name="Bit230" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 424)
+
+[node name="Bit231" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 424)
+
+[node name="Bit232" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 424)
+
+[node name="Bit234" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 440)
+
+[node name="Bit235" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 440)
+
+[node name="Bit236" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 440)
+
+[node name="Bit237" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 440)
+
+[node name="Bit238" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 440)
+
+[node name="Bit239" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 440)
+
+[node name="Bit240" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 456)
+
+[node name="Bit241" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 456)
+
+[node name="Bit242" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 456)
+
+[node name="Bit243" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 456)
+
+[node name="Bit244" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 456)
+
+[node name="Bit245" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 456)
+
+[node name="Bit246" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 472)
+
+[node name="Bit247" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 472)
+
+[node name="Bit248" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 472)
+
+[node name="Bit249" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 472)
+
+[node name="Bit250" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 472)
+
+[node name="Bit252" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 472)
+
+[node name="Bit251" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 472)
+
+[node name="Bit253" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 472)
+
+[node name="Bit254" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 472)
+
+[node name="Bit255" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 472)
+
+[node name="Bit256" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 472)
+
+[node name="Bit257" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 472)
+
+[node name="Bit258" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 472)
+
+[node name="Bit259" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 472)
+
+[node name="Bit260" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 472)
+
+[node name="Bit261" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 472)
+
+[node name="Bit262" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 472)
+
+[node name="Bit263" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 472)
+
+[node name="Bit264" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 472)
+
+[node name="Bit265" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 472)
+
+[node name="Bit266" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 488)
+
+[node name="Bit267" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 504)
+
+[node name="Bit268" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(24, 520)
+
+[node name="Bit269" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(40, 520)
+
+[node name="Bit270" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(56, 520)
+
+[node name="Bit271" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(72, 520)
+
+[node name="Bit272" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(88, 520)
+
+[node name="Bit273" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(104, 520)
+
+[node name="Bit274" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(120, 520)
+
+[node name="Bit275" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(136, 520)
+
+[node name="Bit276" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(152, 520)
+
+[node name="Bit277" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(168, 520)
+
+[node name="Bit278" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(184, 520)
+
+[node name="Bit279" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 488)
+
+[node name="Bit280" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 504)
+
+[node name="Bit281" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(200, 520)
+
+[node name="Bit282" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(216, 520)
+
+[node name="Bit283" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(232, 520)
+
+[node name="Bit284" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 520)
+
+[node name="Bit285" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 504)
+
+[node name="Bit286" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(248, 488)
+
+[node name="Bit287" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(264, 520)
+
+[node name="Bit288" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(280, 520)
+
+[node name="Bit289" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(296, 520)
+
+[node name="Bit290" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(312, 520)
+
+[node name="Bit291" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(328, 520)
+
+[node name="Bit292" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(344, 520)
+
+[node name="Bit293" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(360, 520)
+
+[node name="Bit294" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(376, 520)
+
+[node name="Bit295" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(392, 520)
+
+[node name="Bit296" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(408, 520)
+
+[node name="Bit297" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 520)
+
+[node name="Bit298" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 504)
+
+[node name="Bit299" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(424, 488)
+
+[node name="Bit161" parent="Consumables" instance=ExtResource("4_1b2ni")]
+position = Vector2(216, 328)
+
+[node name="PowerBall" parent="Consumables" instance=ExtResource("5_dbbl1")]
+position = Vector2(24, 104)
+
+[node name="PowerBall3" parent="Consumables" instance=ExtResource("5_dbbl1")]
+position = Vector2(24, 424)
+
+[node name="PowerBall4" parent="Consumables" instance=ExtResource("5_dbbl1")]
+position = Vector2(424, 424)
+
+[node name="PowerBall2" parent="Consumables" instance=ExtResource("5_dbbl1")]
+position = Vector2(424, 104)
+
 [node name="PacMan" parent="." instance=ExtResource("3_nwd3b")]
 position = Vector2(224, 424)
+
+[connection signal="body_entered" from="EntranceLeft" to="." method="_on_entrance_left_body_entered"]
+[connection signal="body_entered" from="EntranceRight" to="." method="_on_entrance_right_body_entered"]

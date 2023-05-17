@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d4htccvjjmmgt"]
+
+[ext_resource type="FontFile" uid="uid://dqowi053nflyy" path="res://assets/fonts/emulogic.ttf" id="1_qlwx1"]
+
+[resource]
+default_font = ExtResource("1_qlwx1")
+default_font_size = 8

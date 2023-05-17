@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PacMan
 
 @export var speed := 100
 @export var move_direction := Vector2.ZERO
@@ -74,7 +75,7 @@ func get_input():
 # checks if the next input is valid
 func is_input_valid():
 	if next_dir == "up":
-		if cur_dir != "up" && clear_up: # need to check if distance is valid too (16 for cardinal, sqrt(2*16^2) for diagonals)
+		if cur_dir != "up" && clear_up:
 			return true
 	
 	elif next_dir == "down":
