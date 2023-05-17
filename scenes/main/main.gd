@@ -1,5 +1,7 @@
 extends Node
 
+var current_score = 0
+var high_score = 0
 
 func _on_entrance_left_body_entered(body):
 	if body is PacMan || body is Ghost:
