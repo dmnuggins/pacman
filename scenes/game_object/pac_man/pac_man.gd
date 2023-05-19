@@ -4,6 +4,10 @@ class_name PacMan
 @export var speed := 100
 @export var move_direction := Vector2.ZERO
 
+@onready var sprite_animator := $AnimatedSprite2D
+
+signal died
+
 var next_dir: String
 var cur_dir: String
 
@@ -29,7 +33,8 @@ func _ready():
 	initialize_vision()
 	cur_dir = "left"
 	move_direction = inputs["left"]
-	$AnimatedSprite2D.play("move")
+	sprite_animator.play("h_move")
+	sprite_animator.flip_h = true
 
 
 func _physics_process(delta):
@@ -39,6 +44,7 @@ func _physics_process(delta):
 			if is_input_valid():
 				move_direction = inputs[next_dir]
 				cur_dir = next_dir
+				update_animation()
 			
 		if is_hitting_wall(cur_dir):
 			move_direction = Vector2(0,0)
@@ -58,6 +64,23 @@ func connect_signals():
 	$BotWallCollider.body_exited.connect(on_down_exited)
 	$LeftWallCollider.body_exited.connect(on_left_exited)
 	$RightWallCollider.body_exited.connect(on_right_exited)
+
+
+func update_animation():
+	match cur_dir:
+		"left":
+			sprite_animator.play("h_move")
+			sprite_animator.flip_h = true
+		"right":
+			sprite_animator.play("h_move")
+			sprite_animator.flip_h = false
+		"up":
+			sprite_animator.play("v_move")
+			sprite_animator.flip_v = false
+		"down":
+			sprite_animator.play("v_move")
+			sprite_animator.flip_v = true
+	# need to account for not moving to stop the animation
 
 
 func initialize_vision():

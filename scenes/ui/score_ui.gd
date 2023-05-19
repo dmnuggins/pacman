@@ -5,7 +5,6 @@ extends CanvasLayer
 
 func _ready():
 	GameEvents.bit_consumed.connect(update_score)
-	
 
 
 func update_score(value: int):

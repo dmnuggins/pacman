@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://0hutsbs2jt8r"]
+[gd_scene load_steps=27 format=3 uid="uid://0hutsbs2jt8r"]
 
 [ext_resource type="Script" path="res://scenes/game_object/pac_man/pac_man.gd" id="1_gic3v"]
 [ext_resource type="Texture2D" uid="uid://dhfhwma48cnjx" path="res://assets/spritesheets/PACMAN_general_sprites.png" id="2_xd67u"]
@@ -51,15 +51,27 @@ region = Rect2(0, 64, 32, 32)
 atlas = ExtResource("2_xd67u")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4hw1j"]
-atlas = ExtResource("2_xd67u")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ldk6u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvyfg"]
 atlas = ExtResource("2_xd67u")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4n3vn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lmtx"]
+atlas = ExtResource("2_xd67u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl7hc"]
+atlas = ExtResource("2_xd67u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmdyf"]
+atlas = ExtResource("2_xd67u")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur0v6"]
+atlas = ExtResource("2_xd67u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b73sq"]
 atlas = ExtResource("2_xd67u")
 region = Rect2(64, 0, 32, 32)
 
@@ -108,21 +120,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4hw1j")
+"texture": SubResource("AtlasTexture_vvyfg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ldk6u")
+"texture": SubResource("AtlasTexture_2lmtx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4n3vn")
+"texture": SubResource("AtlasTexture_wl7hc")
 }],
 "loop": true,
-"name": &"move",
+"name": &"h_move",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmdyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur0v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b73sq")
+}],
+"loop": true,
+"name": &"v_move",
 "speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18yx4"]
-radius = 8.0
+radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jam43"]
 size = Vector2(30, 2)
@@ -144,7 +170,8 @@ script = ExtResource("1_gic3v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.84375, 0.84375)
 sprite_frames = SubResource("SpriteFrames_kt7os")
-animation = &"move"
+animation = &"h_move"
+frame_progress = 0.926565
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_18yx4")
