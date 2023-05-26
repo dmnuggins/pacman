@@ -162,13 +162,12 @@ size = Vector2(30, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv3eq"]
 size = Vector2(2, 30)
 
-[node name="PacMan" type="CharacterBody2D"]
+[node name="PacMan" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 11
 script = ExtResource("1_gic3v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.84375, 0.84375)
 sprite_frames = SubResource("SpriteFrames_kt7os")
 animation = &"h_move"
 frame_progress = 0.926565
@@ -178,43 +177,39 @@ shape = SubResource("CircleShape2D_18yx4")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Up" type="RayCast2D" parent="." groups=["rays"]]
-visible = false
 target_position = Vector2(0, -17)
 
 [node name="Down" type="RayCast2D" parent="." groups=["rays"]]
-visible = false
 target_position = Vector2(0, 17)
 
 [node name="Right" type="RayCast2D" parent="." groups=["rays"]]
-visible = false
 target_position = Vector2(17, 0)
 
 [node name="Left" type="RayCast2D" parent="." groups=["rays"]]
-visible = false
 target_position = Vector2(-17, 0)
 
-[node name="TopWallCollider" type="Area2D" parent="." groups=["vertical"]]
+[node name="TopWallCollider" type="Area2D" parent="."]
 position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWallCollider"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_jam43")
 
-[node name="RightWallCollider" type="Area2D" parent="." groups=["horizontal"]]
+[node name="RightWallCollider" type="Area2D" parent="."]
 position = Vector2(17, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWallCollider"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_4co0c")
 
-[node name="BotWallCollider" type="Area2D" parent="." groups=["vertical"]]
+[node name="BotWallCollider" type="Area2D" parent="."]
 position = Vector2(0, 17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BotWallCollider"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_vv87w")
 
-[node name="LeftWallCollider" type="Area2D" parent="." groups=["horizontal"]]
+[node name="LeftWallCollider" type="Area2D" parent="."]
 position = Vector2(-17, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWallCollider"]

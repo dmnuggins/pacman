@@ -48,6 +48,7 @@ func _physics_process(delta):
 			
 		if is_hitting_wall(cur_dir):
 			move_direction = Vector2(0,0)
+			sprite_animator.stop()
 
 	velocity = move_direction * speed
 	if get_slide_collision_count() > 0:

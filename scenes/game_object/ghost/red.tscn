@@ -1,48 +1,48 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmxr40cf0vs3k"]
+[gd_scene load_steps=17 format=3 uid="uid://bmxr40cf0vs3k"]
 
 [ext_resource type="Texture2D" uid="uid://dhfhwma48cnjx" path="res://assets/spritesheets/PACMAN_general_sprites.png" id="1_g7dr0"]
 [ext_resource type="Script" path="res://scenes/game_object/ghost/ghost.gd" id="1_xiujg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xewrn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0lha"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(96, 96, 32, 32)
+region = Rect2(192, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nswvi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mslrk"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(96, 128, 32, 32)
+region = Rect2(224, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbh6c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp770"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(64, 96, 32, 32)
+region = Rect2(96, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0i56a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5tsa"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(64, 128, 32, 32)
+region = Rect2(64, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1drr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0psdr"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(32, 96, 32, 32)
+region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6sgee"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh5kr"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(32, 128, 32, 32)
+region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnrdc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4efe2"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(0, 96, 32, 32)
+region = Rect2(160, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cy0mf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_krpdc"]
 atlas = ExtResource("1_g7dr0")
-region = Rect2(0, 128, 32, 32)
+region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_62sut"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xewrn")
+"texture": SubResource("AtlasTexture_a0lha")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nswvi")
+"texture": SubResource("AtlasTexture_mslrk")
 }],
 "loop": true,
 "name": &"down",
@@ -50,10 +50,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hbh6c")
+"texture": SubResource("AtlasTexture_bp770")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0i56a")
+"texture": SubResource("AtlasTexture_q5tsa")
 }],
 "loop": true,
 "name": &"left",
@@ -61,10 +61,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q1drr")
+"texture": SubResource("AtlasTexture_0psdr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6sgee")
+"texture": SubResource("AtlasTexture_eh5kr")
 }],
 "loop": true,
 "name": &"right",
@@ -72,10 +72,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lnrdc")
+"texture": SubResource("AtlasTexture_4efe2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cy0mf")
+"texture": SubResource("AtlasTexture_krpdc")
 }],
 "loop": true,
 "name": &"up",
@@ -83,14 +83,77 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ev00t"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra6hv"]
+size = Vector2(30, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t04oo"]
+size = Vector2(2, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dn41"]
+size = Vector2(30, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u1j1"]
+size = Vector2(2, 30)
 
 [node name="Red" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_xiujg")
+speed = 200
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_62sut")
-animation = &"down"
-frame_progress = 0.398847
+animation = &"left"
+frame_progress = 0.955591
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ev00t")
+
+[node name="TopWallCollider" type="Area2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWallCollider"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ra6hv")
+
+[node name="RightWallCollider" type="Area2D" parent="."]
+position = Vector2(17, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWallCollider"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_t04oo")
+
+[node name="BotWallCollider" type="Area2D" parent="."]
+position = Vector2(0, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BotWallCollider"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0dn41")
+
+[node name="LeftWallCollider" type="Area2D" parent="."]
+position = Vector2(-17, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWallCollider"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_2u1j1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="TopWallCollider" to="." method="_on_top_wall_collider_body_entered"]
+[connection signal="body_exited" from="TopWallCollider" to="." method="_on_top_wall_collider_body_exited"]
+[connection signal="body_entered" from="RightWallCollider" to="." method="_on_right_wall_collider_body_entered"]
+[connection signal="body_exited" from="RightWallCollider" to="." method="_on_right_wall_collider_body_exited"]
+[connection signal="body_entered" from="BotWallCollider" to="." method="_on_bot_wall_collider_body_entered"]
+[connection signal="body_exited" from="BotWallCollider" to="." method="_on_bot_wall_collider_body_exited"]
+[connection signal="body_entered" from="LeftWallCollider" to="." method="_on_left_wall_collider_body_entered"]
+[connection signal="body_exited" from="LeftWallCollider" to="." method="_on_left_wall_collider_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
