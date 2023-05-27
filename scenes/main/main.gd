@@ -2,7 +2,7 @@ extends Node
 
 @onready var player : PacMan = $PacMan
 @onready var grid = $Grid
-@onready var red = $Red
+@onready var red: Ghost = $Red
 @onready var path = $Path
 
 var astar_grid: AStarGrid2D
@@ -56,16 +56,22 @@ func _update_grid_from_tilemap() -> void:
 func find_path() -> void:
 	path.clear()
 	# player position is several cells off based on the local_to_map conversion
-	start_cell = grid.local_to_map(player.position)
+	start_cell = grid.local_to_map(red.position)
+	# passes ghost grid cell vector to ghost script for reference of cur_location on map (local)
+	red.cur_grid_cell = start_cell
+#	print(start_cell)
 #	print("Player: ", start_cell)
-	end_cell = grid.local_to_map(red.position)
+	end_cell = grid.local_to_map(player.position)
 #	print("Ghost: ", end_cell)
-	
+
 	if start_cell == end_cell or !astar_grid.is_in_boundsv(start_cell) or !astar_grid.is_in_boundsv(end_cell):
 		return
 	
 	var id_path = astar_grid.get_id_path(start_cell, end_cell)
+	# passes path to ghost script for move vector calculation
 	red.path = id_path
+
+#	print((id_path[1] - start_cell))
 	for id in id_path:
 		path.set_cell(0, id, 1, Vector2(0, 0))
 

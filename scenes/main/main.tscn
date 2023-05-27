@@ -842,9 +842,10 @@ position = Vector2(424, 104)
 [node name="PacMan" parent="." instance=ExtResource("3_nwd3b")]
 position = Vector2(224, 424)
 
-[node name="Red" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_yrr6f")]
+[node name="Red" parent="." node_paths=PackedStringArray("player", "grid") instance=ExtResource("9_yrr6f")]
 position = Vector2(224, 232)
 player = NodePath("../PacMan")
+grid = NodePath("../Grid")
 
 [connection signal="body_entered" from="EntranceLeft" to="." method="_on_entrance_left_body_entered"]
 [connection signal="body_entered" from="EntranceRight" to="." method="_on_entrance_right_body_entered"]
